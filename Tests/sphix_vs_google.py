@@ -1,5 +1,4 @@
-# import libraries
-
+#import libraries
 import speech_recognition as sr
 r = sr.Recognizer()
 # Get the default microphone
@@ -9,5 +8,7 @@ with sr.Microphone() as source:
     while True:
         audio = r.listen(source)
         # Recognizes speech using Google as a Service: Online
-        text = r.recognize_google(audio)
-        print(text)
+        google = r.recognize_google(audio)
+        sphinx = r.recognize_sphinx(audio)
+        print("Google:{}\nSphinx:{}\n\n".format(google, sphinx))
+        break
