@@ -10,6 +10,9 @@ from core import SystemInfo
 
 # Speech Synthesis
 engine = pyttsx3.init()
+voices = engine.getProperty('voices')
+# changing index, changes voices. 1 for female and 0 for male
+engine.setProperty('voice', voices[1].id)
 
 
 def speak(text):
@@ -26,7 +29,7 @@ stream = p.open(format=pyaudio.paInt16, channels=1,
 stream.start_stream()
 
 while True:
-    data = stream.read(4000)
+    data = stream.read(8000)
     if len(data) == 0:
         break
     if rec.AcceptWaveform(data):
