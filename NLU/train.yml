@@ -1,41 +1,41 @@
-commnads:
+commands:
   #Time
-  -command:
+  - command:
     input: What time is it?
     entity: time
     action: getTime
-  -command:
+  - command:
     input: Tell me the time
     entity: time
     action: getTime
   #Date
-  -command:
+  - command:
     input: What is the date?
     entity: time
     action: getDate
-  -command:
+  - command:
     input: Tell me the date
     entity: time
     action: getDate
   #Year
-  -command:
+  - command:
     input: What year is it?
     entity: time
     action: getYear
-  -command:
+  - command:
     input: Tell me the year?
     entity: time
     action: getYear
   #weather
-  -command:
+  - command:
     input: Tell me the weather today
     entity: time
     action: getWeather
-  -command:
+  - command:
     input: What is the weather today ?
     entity: time
     action: getWeather
-  -command:
+  - command:
     input: What is the weather like
     entity: time
     action: getWeather
