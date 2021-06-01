@@ -1,4 +1,4 @@
+time\getYear
+time\getWeather
 time\getTime
 time\getDate
-time\getWeather
-time\getYear

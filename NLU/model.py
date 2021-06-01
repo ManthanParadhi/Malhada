@@ -1,4 +1,3 @@
-from re import X
 import yaml
 import numpy as np
 import tensorflow as tf
@@ -66,8 +65,8 @@ def classify(text):
     return idx2lbl[idx]
 
 
-'''if __name__=='__main__':
+'''if __name__ == '__main__':
     while True:
         text = input("Enter some text:")
-        classify(text)
+        print(classify(text))
 '''

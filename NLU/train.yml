@@ -17,6 +17,10 @@ commands:
     input: Tell me the date
     entity: time
     action: getDate
+  - command:
+    input: Date today
+    entity: time
+    action: getDate
   #Year
   - command:
     input: What year is it?
