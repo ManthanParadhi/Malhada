@@ -15,17 +15,17 @@ for k, label in enumerate(labels):
 
 
 def classify(text):
-    x = np.zeros((1, max_sent, 256), dtype="float32")
+    x = np.zeros((1, 48, 256), dtype="float32")
     for k, ch in enumerate(bytes(text.encode("utf-8"))):
         x[0, k, int(ch)] = 1.0
     out = model.predict(x)
     idx = out.argmax()
 
     #print("text: '{}' is classified as '{}'".format(text, idx2lbl[idx]))
-    return idx2lbl
+    return idx2lbl[idx]
 
 
 if __name__ == '__main__':
     while True:
         text = input("Enter some text:")
-        classify(text)
+        print(classify(text))
