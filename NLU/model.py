@@ -1,3 +1,4 @@
+from re import X
 import yaml
 import numpy as np
 import tensorflow as tf
@@ -42,3 +43,19 @@ model.compile(optimizer="adam",
               loss="categorical_crossentropy", metrics=["acc"])
 
 model.fit(input_data, output_data, epochs=256)
+
+
+# classify any given text
+def classify(text):
+    x = np.zeros((1, max_sent, 256), dtype="float32")
+    for k, ch in enumerate(bytes(text.encode("utf-8"))):
+        x[0, k, int(ch)] = 1.0
+    out = model.predict(x)
+    idx = out.argmax()
+
+    print("text: '{}' is classified as '{}'".format(text, idx2lbl[idx]))
+
+
+while True:
+    text = input("Enter some text:")
+    classify(text)
