@@ -22,6 +22,13 @@ for i, inp in enumerate(inputs):
 
 
 labels = set(outputs)
+fwrite = open('NLU\entities.txt', 'w', encoding='utf-8')
+for label in labels:
+    fwrite.write(label + '\n')
+fwrite.close()
+
+labels = open('NLU\entities.txt', 'r', encoding='utf-8').read().split('\n')
+
 lbl2idx = {}
 idx2lbl = {}
 
@@ -43,9 +50,11 @@ model.compile(optimizer="adam",
               loss="categorical_crossentropy", metrics=["acc"])
 
 model.fit(input_data, output_data, epochs=256)
-
+model.save('NLU\model.5')
 
 # classify any given text
+
+
 def classify(text):
     x = np.zeros((1, max_sent, 256), dtype="float32")
     for k, ch in enumerate(bytes(text.encode("utf-8"))):
@@ -53,9 +62,12 @@ def classify(text):
     out = model.predict(x)
     idx = out.argmax()
 
-    print("text: '{}' is classified as '{}'".format(text, idx2lbl[idx]))
+    #print("text: '{}' is classified as '{}'".format(text, idx2lbl[idx]))
+    return idx2lbl[idx]
 
 
-while True:
-    text = input("Enter some text:")
-    classify(text)
+'''if __name__=='__main__':
+    while True:
+        text = input("Enter some text:")
+        classify(text)
+'''
