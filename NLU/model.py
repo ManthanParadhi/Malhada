@@ -11,7 +11,7 @@ for command in data['commands']:
     inputs.append(command['input'])
     outputs.append('{}\{}'.format(command['entity'], command['action']))
 
-max_sent = max([len(x) for x in inputs])
+max_sent = max([len(bytes(x.encode('utf-8'))) for x in inputs])
 # create data set matrics with zero's
 input_data = np.zeros((len(inputs), max_sent, 256), dtype="float32")
 

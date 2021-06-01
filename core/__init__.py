@@ -1,4 +1,5 @@
 import datetime
+import inflect
 
 
 class SystemInfo:
@@ -8,13 +9,27 @@ class SystemInfo:
     @staticmethod
     def get_time():
         now = datetime.datetime.now()
-        ans = "The time now is {} {} {} {}".format(
-            now.hour, "hour"if now.hour == 1 else"hours", now.minute, "minute"if now.minute == 1 else"minutes")
+        ans = "The time now is {} {} {} {} {} {}".format(
+            now.hour, inflect.engine().singular_noun("hours", now.hour),
+            now.minute, inflect.engine().singular_noun("minutes", now.minute),
+            now.second, inflect.engine().singular_noun("seconds", now.second))
         return ans
 
-    @staticmethod
+    @ staticmethod
     def get_date():
         now = datetime.datetime.now()
-        ans = "The date is {} {} {}".format(
-            now.day, now.month, now.year)
+        ans = "Today is {} {} {}".format(
+            inflect.engine().ordinal(now.day), now.strftime('%B'), now.year)
+        print(ans)
         return ans
+
+    @ staticmethod
+    def get_weather():
+        now = datetime.datetime.now()
+        month = []
+        ans = 1
+        return ans
+
+
+ans = SystemInfo.get_time()
+print(ans)

@@ -5,6 +5,7 @@ import os
 import pyaudio
 import pyttsx3
 import json
+import keyboard
 # import the core lib
 from core import SystemInfo
 # import classifier
@@ -30,6 +31,7 @@ stream = p.open(format=pyaudio.paInt16, channels=1,
                 rate=16000, input=True, frames_per_buffer=8000)
 stream.start_stream()
 
+
 while True:
     data = stream.read(10000)
     if len(data) == 0:
@@ -47,4 +49,4 @@ while True:
             speak(SystemInfo.get_date())
         else:
             pass
-        print(text, 'you said this \n', entity)
+        print(text, '\n')
