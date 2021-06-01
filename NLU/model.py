@@ -18,3 +18,17 @@ input_data = np.zeros((len(inputs), max_sent, 256), dtype="float32")
 for i, inp in enumerate(inputs):
     for k, ch in enumerate(bytes(inp.encode("utf-8"))):
         input_data[i, k, int(ch)] = 1.0
+
+
+labels = set(outputs)
+lbl2idx = {}
+idx2lbl = {}
+
+for k, label in enumerate(labels):
+    lbl2idx[label] = k
+    idx2lbl[k] = label
+
+output_data = []
+for output in outputs:
+    output_data.append(lbl2idx[output])
+print(output_data)
