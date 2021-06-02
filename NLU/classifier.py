@@ -16,7 +16,7 @@ for k, label in enumerate(labels):
 
 
 def classify(text):
-    x = np.zeros((1, 48, 256), dtype="float32")
+    x = np.zeros((1, 27, 256), dtype="float32")
     if(len(x) > 48):
         x = x[:48]
     for k, ch in enumerate(bytes(text.encode("utf-8"))):

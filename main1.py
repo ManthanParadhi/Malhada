@@ -6,6 +6,7 @@ import pyaudio
 import pyttsx3
 import json
 import keyboard
+import speech_recognition as sr
 # import the core lib
 from core import SystemInfo
 from core.system import Runner
@@ -37,6 +38,7 @@ def speak(text):
     engine.runAndWait()
 
 
+'''
 model = Model("model")
 rec = KaldiRecognizer(model, 16000)
 
@@ -45,14 +47,18 @@ stream = p.open(format=pyaudio.paInt16, channels=1,
                 rate=16000, input=True, frames_per_buffer=8192)
 stream.start_stream()
 
-
-while True:
-    data = stream.read(8192)
-    if len(data) == 0:
-        break
-    if rec.AcceptWaveform(data):
-        # convert result from string to dict
-        result = json.loads(rec.Result())
-        text = result['text']
+'''
+with sr.Microphone() as source:
+    while True:
+        '''data = stream.read(8192)
+        if len(data) == 0:
+            break
+        if rec.AcceptWaveform(data):
+            # convert result from string to dict
+            result = json.loads(rec.Result())
+            text = result['text']'''
+        audio = sr.Recognizer().listen(source)
+        # Recognizes speech using Google as a Service: Online
+        text = sr.Recognizer().recognize_sphinx(audio)
         print(text)
         evaluate(text)
