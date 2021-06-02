@@ -43,3 +43,12 @@ commands:
     input: What is the weather like
     entity: time
     action: getWeather
+  #open
+  - command:
+    input: open notepad
+    entity: open
+    action: notepad
+  - command:
+    input: start notepad
+    entity: open
+    action: notepad

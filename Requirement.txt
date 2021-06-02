@@ -4,3 +4,4 @@ PyAudio==0.2.11
 pyttsx3==2.90
 PyYAML 5.4.1
 tensorflow
+inflect-5.3.0

@@ -1,4 +1,5 @@
-time\getYear
 time\getWeather
 time\getDate
+time\getYear
+open\notepad
 time\getTime
