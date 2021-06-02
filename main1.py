@@ -5,6 +5,7 @@ import os
 import pyaudio
 import pyttsx3
 import json
+import speech_recognition as sr
 #import keyboard
 # import the core lib
 from core import SystemInfo
@@ -40,6 +41,7 @@ def speak(text):
     engine.runAndWait()
 
 
+'''
 model = Model("model")
 rec = KaldiRecognizer(model, 16000)
 
@@ -59,3 +61,29 @@ while True:
         text = result['text']
         print(text)
         evaluate(text)
+'''
+
+# google recognizer
+
+
+def takeCommand():
+    r = sr.Recognizer()
+    with sr.Microphone() as source:
+        audio = r.listen(source)
+    try:
+        print("Recognizing...")
+        # Using google for voice recognition.
+        query = r.recognize_google(audio, language='en-in')
+        print(f"User said: {query}\n")  # User query will be printed.
+
+    except Exception as e:
+        # print(e)
+        # Say that again will be printed in case of improper voice
+        print("Say that again please...")
+        return "None"  # None string will be returned
+    return query.lower()
+
+
+if __name__ == "__main__":
+    while(True):
+        evaluate(takeCommand())

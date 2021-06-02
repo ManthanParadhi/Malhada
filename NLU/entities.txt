@@ -1,6 +1,6 @@
+time\getDate
 time\getWeather
 open\chrome
-open\notepad
 time\getYear
-time\getDate
 time\getTime
+open\notepad
