@@ -49,6 +49,22 @@ commands:
     entity: open
     action: notepad
   - command:
+    input: open not bad
+    entity: open
+    action: notepad
+  - command:
     input: start notepad
     entity: open
     action: notepad
+  - command:
+    input: notepad
+    entity: open
+    action: notepad
+  - command:
+    input: open chrome
+    entity: open
+    action: chrome
+  - command:
+    input: start chrome
+    entity: open
+    action: chrome

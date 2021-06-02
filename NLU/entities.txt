@@ -1,5 +1,6 @@
 time\getWeather
-time\getDate
-time\getYear
+open\chrome
 open\notepad
+time\getYear
+time\getDate
 time\getTime

@@ -20,7 +20,6 @@ class SystemInfo:
         now = datetime.datetime.now()
         ans = "Today is {} {} {}".format(
             inflect.engine().ordinal(now.day), now.strftime('%B'), now.year)
-        print(ans)
         return ans
 
     @ staticmethod
@@ -29,7 +28,3 @@ class SystemInfo:
         month = []
         ans = 1
         return ans
-
-
-ans = SystemInfo.get_time()
-print(ans)
