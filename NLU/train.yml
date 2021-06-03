@@ -43,6 +43,31 @@ commands:
     input: What is the weather like
     entity: time
     action: getWeather
+  #music
+  - command:
+    input: Play music
+    entity: music
+    action: playPause
+  - command:
+    input: Play sound
+    entity: music
+    action: playPause
+  - command:
+    input: start music
+    entity: music
+    action: playPause
+  - command:
+    input: pause music
+    entity: music
+    action: playPause
+  - command:
+    input: pause sound
+    entity: music
+    action: playPause
+  - command:
+    input: stop music
+    entity: music
+    action: playPause
   #open
   - command:
     input: open notepad

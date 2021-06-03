@@ -1,5 +1,7 @@
 import datetime
 import inflect
+from pynput.keyboard import Key, Controller
+kb = Controller()
 
 
 class SystemInfo:
@@ -28,3 +30,8 @@ class SystemInfo:
         month = []
         ans = 1
         return ans
+
+    @ staticmethod
+    def play_pause():
+        kb.press(Key.media_play_pause)
+        kb.release(Key.media_play_pause)

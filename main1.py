@@ -26,6 +26,8 @@ def evaluate(text):
         speak(SystemInfo.get_time())
     elif entity == 'time\getDate':
         speak(SystemInfo.get_date())
+    elif entity == 'music\playPause':
+        SystemInfo.play_pause()
     elif entity == 'open\notepad':
         speak('ok, opening notepad')
         os.system('notepad.exe')
