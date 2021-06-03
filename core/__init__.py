@@ -39,5 +39,5 @@ class SystemInfo:
 
     @ staticmethod
     def open_chrome():
-        os.system('"C:\Program Files\Google\Chrome\Application\chrome.exe"')
+        os.system("C:\Program Files\Google\Chrome\Application\chrome.exe")
         return
