@@ -1,5 +1,6 @@
 import datetime
 import inflect
+import os
 from pynput.keyboard import Key, Controller
 kb = Controller()
 
@@ -35,3 +36,8 @@ class SystemInfo:
     def play_pause():
         kb.press(Key.media_play_pause)
         kb.release(Key.media_play_pause)
+
+    @ staticmethod
+    def open_chrome():
+        os.system('"C:\Program Files\Google\Chrome\Application\chrome.exe"')
+        return

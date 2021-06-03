@@ -33,9 +33,10 @@ def evaluate(text):
         os.system('notepad.exe')
     elif entity == 'open\chrome':
         speak('ok, opening google chrome')
-        os.system('"C:\Program Files\Google\Chrome\Application\chrome.exe"')
+        SystemInfo.open_chrome()
+
     else:
-        pass
+        exit()
 
 
 def speak(text):

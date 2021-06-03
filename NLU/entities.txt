@@ -1,6 +1,7 @@
-time\getDate
-time\getWeather
 open\chrome
 time\getYear
-time\getTime
+time\getDate
+music\playPause
 open\notepad
+time\getWeather
+time\getTime

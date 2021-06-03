@@ -48,7 +48,7 @@ model.add(Dense(len(labels), activation='softmax'))
 model.compile(optimizer="adam",
               loss="categorical_crossentropy", metrics=["acc"])
 
-model.fit(input_data, output_data, epochs=1024)
+model.fit(input_data, output_data, epochs=2048)
 model.save('NLU\model.5')
 
 # classify any given text

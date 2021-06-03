@@ -70,7 +70,7 @@ commands:
     action: playPause
   #open
   - command:
-    input: open notepad
+    input: open Notepad
     entity: open
     action: notepad
   - command:
