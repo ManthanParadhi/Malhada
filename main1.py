@@ -36,7 +36,7 @@ def evaluate(text):
         SystemInfo.open_chrome()
 
     else:
-        exit()
+        speak("please speak again")
 
 
 def speak(text):
@@ -44,7 +44,6 @@ def speak(text):
     engine.runAndWait()
 
 
-'''
 model = Model("model")
 rec = KaldiRecognizer(model, 16000)
 
@@ -90,3 +89,4 @@ def takeCommand():
 if __name__ == "__main__":
     while(True):
         evaluate(takeCommand())
+'''

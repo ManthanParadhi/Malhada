@@ -1,6 +1,7 @@
 import datetime
+import subprocess
 import inflect
-import os
+import subprocess
 from pynput.keyboard import Key, Controller
 kb = Controller()
 
@@ -39,5 +40,6 @@ class SystemInfo:
 
     @ staticmethod
     def open_chrome():
-        os.system("C:\Program Files\Google\Chrome\Application\chrome.exe")
+        subprocess.Popen(
+            '"C:\Program Files\Google\Chrome\Application\chrome.exe"')
         return
