@@ -28,18 +28,17 @@ class SystemInfo:
 
     @ staticmethod
     def get_weather():
-        now = datetime.datetime.now()
-        month = []
-        ans = 1
         return ans
 
     @ staticmethod
     def play_pause():
+        if (('resso' in str(subprocess.check_output(('tasklist', '/fi', 'imagename eq resso.exe'))).lower()) or ('wmplayer' in str(subprocess.check_output(('tasklist', '/fi', 'imagename eq wmplayer.exe'))).lower())) == False:
+            subprocess.Popen("start wmplayer.exe", shell=True)
+
         kb.press(Key.media_play_pause)
         kb.release(Key.media_play_pause)
 
     @ staticmethod
     def open_chrome():
-        subprocess.Popen(
-            '"C:\Program Files\Google\Chrome\Application\chrome.exe"')
+        subprocess.Popen("start www.google.com", shell=True)
         return
